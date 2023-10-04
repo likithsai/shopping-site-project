@@ -7,6 +7,11 @@ module.exports = {
     fontFamily: {
       'sans': ['"lato"', ...defaultTheme.fontFamily.sans],
     },
+    fontWeight: {
+      'normal': 400,
+      'bold': 700,
+      'italic': 400,
+    },
   },
   plugins: [],
 }
