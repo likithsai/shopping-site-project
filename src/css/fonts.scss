@@ -1,0 +1,24 @@
+$fonts: (
+  "Font1": (
+    family: "lato",
+    path: './fonts/Lato/Lato-Regular.woff2',
+    weight: normal
+  ),
+  "Font2": (
+    family: "lato",
+    path: './fonts/Lato/Lato-Bold.woff2',
+    weight: bold
+  )
+);
+
+@mixin font-face($font) {
+  @font-face {
+    font-family: map-get($font, family);
+    src: url("#{map-get($font, path)}") format('woff2');
+    font-weight: map-get($font, weight);
+  }
+}
+
+@each $font-family, $font-properties in $fonts {
+  @include font-face($font-properties);
+}
