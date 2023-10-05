@@ -1,7 +1,6 @@
-import './assets/css/App.scss';
 import React from 'react';
 
-function App() {
+function Home() {
   return (
     <div className="w-full text-center">
       <h1 className="font-bold underline">
@@ -11,4 +10,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

@@ -9,8 +9,8 @@ $fontWeights: (
 
 @each $font-weight, $font-weight-value in $fontWeights {
   @font-face {
-    font-family: $fontFamily;
-    src: url("#{$fontPath}Lato-#{$font-weight}.woff2") format('woff2');
-    font-weight: map-get($fontWeights, $font-weight);
+    font-family: #{$fontFamily};
+    src: url("#{$fontPath}#{$fontFamily}-#{$font-weight}.woff2") format('woff2');
+    font-weight: $font-weight-value;
   }
 }
