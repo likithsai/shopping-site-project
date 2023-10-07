@@ -7,7 +7,7 @@ function Home() {
   return (
     <div className="w-full text-center">
     { JSON.stringify(products) }
-    { products.map((itm) => <p>{itm.name}</p>)}
+    {/* { products.map((itm) => <p>{itm.name}</p>)} */}
     </div>
   );
 }
