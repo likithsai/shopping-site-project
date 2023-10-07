@@ -1,6 +1,6 @@
 
 const initialState = {
-    products: [],
+    items: [],
     cart: [],
 };
 
@@ -19,7 +19,7 @@ const rootReducer = (state = initialState, action) => {
     case 'SET_DATA':
       return {
         ...state,
-        products: action.payload,
+        items: action.payload,
       };
     default:
       return state;

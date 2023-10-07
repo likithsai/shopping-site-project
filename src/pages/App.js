@@ -4,12 +4,15 @@ import Home from './Home';
 import ProductDetail from "./ProductDetail";
 import { Provider } from 'react-redux';
 import store from '../redux/Store';
+import axios from "axios";
 import { setData } from '../redux/Actions'; 
-import data from '../assets/data/data.json';
+const JSON_DATA = "data/data.json";
 
 const App = () => {
     useEffect(() => {
-      store.dispatch(setData(data));
+      axios.get(JSON_DATA)
+        .then((res) => store.dispatch(setData(res.data)))
+        .catch(err => console.log(err))
     }, []); 
 
     return (
