@@ -1,13 +1,18 @@
 import React from 'react';
+import { connect } from "react-redux";
 
-function Home() {
+function Home(props) {
   return (
     <div className="w-full text-center">
-      <h1 className="font-bold underline">
-        Hello world!
+      <h1>
+        { JSON.stringify(props.products) }
       </h1>
     </div>
   );
 }
 
-export default Home;
+const mapStateToProps = (state) => ({
+  products: state.products, // Replace 'products' with your actual state property
+});
+
+export default connect(mapStateToProps)(Home);
