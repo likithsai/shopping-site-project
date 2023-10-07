@@ -16,10 +16,10 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         cart: state.cart.filter((item) => item.id !== action.payload),
       };
-    case 'SET_PRODUCTS':
+    case 'SET_DATA':
       return {
         ...state,
-        products: action.payload, // Store loaded products in the state
+        products: action.payload,
       };
     default:
       return state;

@@ -4,24 +4,12 @@ import Home from './Home';
 import ProductDetail from "./ProductDetail";
 import { Provider } from 'react-redux';
 import store from '../redux/Store';
-import { setProducts } from '../redux/Actions'; 
+import { setData } from '../redux/Actions'; 
+import data from '../assets/data/data.json';
 
 const App = () => {
     useEffect(() => {
-      store.dispatch(setProducts([
-        {
-          id: 1,
-          name: 'Product 1',
-          price: 10.99,
-          description: 'Description for Product 1',
-        },
-        {
-          id: 2,
-          name: 'Product 2',
-          price: 19.99,
-          description: 'Description for Product 2',
-        },
-      ]));
+      store.dispatch(setData(data));
     }, []); 
 
     return (
