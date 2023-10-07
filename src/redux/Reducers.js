@@ -16,7 +16,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         cart: state.cart.filter((item) => item.id !== action.payload),
       };
-    case 'LOAD_PRODUCTS':
+    case 'SET_PRODUCTS':
       return {
         ...state,
         products: action.payload, // Store loaded products in the state

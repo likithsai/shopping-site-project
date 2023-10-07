@@ -9,7 +9,7 @@ export const removeFromCart = (productId) => ({
 });
 
 export const setProducts = (products) => ({
-  type: 'LOAD_PRODUCTS',
+  type: 'SET_PRODUCTS',
   payload: products,
 });
   
