@@ -1,18 +1,16 @@
 import React from 'react';
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 
-function Home(props) {
+function Home() {
+  const products = useSelector((state) => state.products)
+
   return (
     <div className="w-full text-center">
       <h1>
-        { JSON.stringify(props.products) }
+        { JSON.stringify(products) }
       </h1>
     </div>
   );
 }
 
-const mapStateToProps = (state) => ({
-  products: state.products, // Replace 'products' with your actual state property
-});
-
-export default connect(mapStateToProps)(Home);
+export default Home;
