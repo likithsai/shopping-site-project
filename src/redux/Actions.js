@@ -1,15 +1,17 @@
+import { appConstants } from "../enum/constants";
+
 export const addToCart = (product) => ({
-  type: 'ADD_TO_CART',
+  type: appConstants.ADD_TO_CART,
   payload: product,
 });
 
 export const removeFromCart = (productId) => ({
-  type: 'REMOVE_FROM_CART',
+  type: appConstants.REMOVE_FROM_CART,
   payload: productId,
 });
 
 export const setData = (products) => ({
-  type: 'SET_DATA',
+  type: appConstants.SET_DATA,
   payload: products,
 });
   

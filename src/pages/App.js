@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import store from '../redux/Store';
 import axios from "axios";
 import { setData } from '../redux/Actions';
+import Header from "../assets/css/component/Header";
 const JSON_DATA = "data/data.json";
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
                     </div>
                 ) : (
                     <BrowserRouter>
+                        <Header></Header>
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/product/:item" element={<ProductDetail />} />
