@@ -1,15 +1,24 @@
 import React from 'react';
-import { useSelector } from "react-redux";
+import { connect } from "react-redux";
 
-function Home() {
-  const products = useSelector((state) => state.items).products
+const Home = (props) => {
 
   return (
-    <div className="w-full text-center">
-    { JSON.stringify(products) }
-    {/* { products.map((itm) => <p>{itm.name}</p>)} */}
+    <div className='px-4 py-2.5'>
+      <div className="w-full mx-auto max-w-screen-xl">
+      { JSON.stringify(props.items.products) }
+      {/* { props.items.products.map((itm) => <p>{itm.name}</p>)} */}
+      </div>
     </div>
   );
 }
 
-export default Home;
+function mapStateToProps(state, ownProps) {
+  return {
+       items: state.items
+  }
+}
+
+export default connect(
+  mapStateToProps
+)(Home)
