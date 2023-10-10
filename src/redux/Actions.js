@@ -14,4 +14,3 @@ export const setData = (products) => ({
   type: appConstants.SET_DATA,
   payload: products,
 });
-  

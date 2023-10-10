@@ -9,6 +9,8 @@ import { setData } from '../redux/Actions';
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import Shop from "../pages/Shop";
+import Cart from "./Cart";
+
 const JSON_DATA = "data/data.json";
 
 const App = () => {
@@ -24,12 +26,17 @@ const App = () => {
                 <div className="flex flex-col h-screen">
                     <Header></Header>
                     <main className="flex-1 overflow-y-scroll gap-2 bg-gray-50">
-                        <Routes>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/home" element={<Home />} />
-                            <Route path="/shop" element={<Shop />} />
-                            <Route path="/product/:item" element={<ProductDetail />} />
-                        </Routes>
+                        <div className='px-4 py-2.5'>
+                            <div className="w-full mx-auto max-w-screen-xl">
+                            <Routes>
+                                <Route path="/" element={<Home />} />
+                                <Route path="/home" element={<Home />} />
+                                <Route path="/shop" element={<Shop />} />
+                                <Route path="/cart" element={<Cart />} />
+                                <Route path="/product/:item" element={<ProductDetail />} />
+                            </Routes>
+                            </div>
+                        </div>
                     </main>
                     <Footer></Footer>
                 </div>

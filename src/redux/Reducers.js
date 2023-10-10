@@ -1,6 +1,7 @@
 import { appConstants } from "../enum/constants";
 
 const initialState = {
+    title: null,
     items: [],
     cart: [],
 };
@@ -21,6 +22,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         items: action.payload,
+        title: action.payload.title
       };
     default:
       return state;

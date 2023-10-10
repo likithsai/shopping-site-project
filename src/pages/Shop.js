@@ -1,13 +1,24 @@
-import React from "react"
+import React, { useState, useEffect } from 'react';
+import { connect } from "react-redux";
 
 const Shop = (props) => {
+    const [items, setItems] = useState({});
+
+    useEffect(() => {
+        setItems(props.items);
+    }, [props.items]);
+
     return (
-        <div className='px-4 py-2.5'>
-            <div className="w-full mx-auto max-w-screen-xl">
-            shop items
-            </div>
-        </div>
-    )
+        <p>{ JSON.stringify(items) }</p>
+    );
 }
 
-export default Shop
+function mapStateToProps(state) {
+  return {
+       items: state.items
+  }
+}
+
+export default connect(
+    mapStateToProps
+)(Shop)
