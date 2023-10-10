@@ -21,11 +21,12 @@ const App = () => {
     return (
         <Provider store={store}>
             <BrowserRouter>
-                <div class="flex flex-col h-screen">
+                <div className="flex flex-col h-screen">
                     <Header></Header>
-                    <main class="flex-1 overflow-y-scroll gap-2 bg-gray-50">
+                    <main className="flex-1 overflow-y-scroll gap-2 bg-gray-50">
                         <Routes>
                             <Route path="/" element={<Home />} />
+                            <Route path="/home" element={<Home />} />
                             <Route path="/shop" element={<Shop />} />
                             <Route path="/product/:item" element={<ProductDetail />} />
                         </Routes>
