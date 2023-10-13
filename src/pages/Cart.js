@@ -10,13 +10,17 @@ const Cart = (props) => {
     return (
         <div>
             <ul>
-                {props.cart.map(cartItem => (
-                    <li key={cartItem.id}>
-                        <p>{ JSON.stringify(cartItem)}</p>
-                        {cartItem.name} - ${cartItem.newprice}
-                        <button onClick={() => removeFromCart(cartItem.id)}>Remove from Cart</button>
-                    </li>
-                ))}
+                {
+                    props.cart && props.cart.length > 0 ? (
+                        props.cart.map(cartItem => (
+                            <li key={cartItem.id}>
+                                <p>{ JSON.stringify(cartItem)}</p>
+                                {cartItem.name} - ${cartItem.newprice}
+                                <button onClick={() => removeFromCart(cartItem.id)}>Remove from Cart</button>
+                            </li>
+                        ))
+                    ) : (<p>No Cart Items</p>)
+                }
             </ul>
         </div>
     );

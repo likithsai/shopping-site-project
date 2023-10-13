@@ -22,7 +22,16 @@ const Header = (props) => {
                         <span className="self-center text-xl font-semibold whitespace-nowrap font-bold">{ props.title }</span>
                     </NavLink>
                     <div className="flex items-center lg:order-2 gap-1">
-                        <NavLink exact to={"/cart"} >
+                        <NavLink exact to={"/cart"} className="aria-[current=page]:text-orange-700">
+                            {/* <div class="relative inline-flex w-fit">
+                                <div
+                                    class="absolute bottom-auto left-auto right-0 top-0 z-10 inline-block -translate-y-1/2 translate-x-2/4 rotate-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100 whitespace-nowrap rounded-full bg-indigo-700 px-2 py-1 text-center align-baseline text-xs font-bold leading-none text-white">
+                                    { props.cart.length }
+                                </div>
+                                <div class="flex items-center justify-center text-center">
+                                    <FontAwesomeIcon className="w-6 h-6" icon={faCartPlus} />
+                                </div>
+                            </div> */}
                             <div className="flex items-center gap-1 py-2 px-4">
                                 <button className="inline-flex items-center ml-1 text-sm rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
                                     <FontAwesomeIcon className="w-6 h-6" icon={faCartPlus} />

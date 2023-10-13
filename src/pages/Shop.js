@@ -16,12 +16,17 @@ const Shop = (props) => {
     return (
         <div>
             <ul>
-                {items.map(item => (
-                    <li key={item.id}>
-                        {item.name} - ${item.newprice}
-                        <button onClick={() => addToCart(item)}>Add to Cart</button>
-                    </li>
-                ))}
+                {
+                    items && items.length > 0 ? (
+                            items.map(item => (
+                                <li key={item.id}>
+                                    <p>{JSON.stringify(item)}</p>
+                                    {item.name} - ${item.newprice}
+                                    <button onClick={() => addToCart(item)}>Add to Cart</button>
+                                </li>
+                            ))
+                    ) : (<p>No items</p>)
+                }
             </ul>
         </div>
 
