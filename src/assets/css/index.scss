@@ -1,7 +1,7 @@
-/* include font files */
-@import 'fonts.scss';
-
 // import tailwindcss
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* include font files */
+@import 'fonts.scss';

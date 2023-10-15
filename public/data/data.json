@@ -9,11 +9,11 @@
         "images": [{
           "alt": "picture 1",
           "title": "picture 1",
-          "src": "https://dummyimage.com/600x400"
+          "src": "https://dummyimage.com/600x401"
         }, {
           "alt": "picture 2",
           "title": "picture 2",
-          "src": "https://dummyimage.com/600x400"
+          "src": "https://dummyimage.com/600x402"
         }],
         "oldprice": 10.99,
         "newprice": 10.99
@@ -25,11 +25,59 @@
         "images": [{
           "alt": "picture 1",
           "title": "picture 1",
-          "src": "https://dummyimage.com/600x400"
+          "src": "https://dummyimage.com/600x403"
         }, {
           "alt": "picture 2",
           "title": "picture 2",
-          "src": "https://dummyimage.com/600x400"
+          "src": "https://dummyimage.com/600x404"
+        }],
+        "oldprice": 19.99,
+        "newprice": 10.99
+      },
+      {
+        "id": "3",
+        "name": "Product 2",
+        "description": "Description for Product 2",
+        "images": [{
+          "alt": "picture 1",
+          "title": "picture 1",
+          "src": "https://dummyimage.com/600x403"
+        }, {
+          "alt": "picture 2",
+          "title": "picture 2",
+          "src": "https://dummyimage.com/600x404"
+        }],
+        "oldprice": 19.99,
+        "newprice": 10.99
+      },
+      {
+        "id": "4",
+        "name": "Product 2",
+        "description": "Description for Product 2",
+        "images": [{
+          "alt": "picture 1",
+          "title": "picture 1",
+          "src": "https://dummyimage.com/600x403"
+        }, {
+          "alt": "picture 2",
+          "title": "picture 2",
+          "src": "https://dummyimage.com/600x404"
+        }],
+        "oldprice": 19.99,
+        "newprice": 10.99
+      },
+      {
+        "id": "5",
+        "name": "Product 2",
+        "description": "Description for Product 2",
+        "images": [{
+          "alt": "picture 1",
+          "title": "picture 1",
+          "src": "https://dummyimage.com/600x403"
+        }, {
+          "alt": "picture 2",
+          "title": "picture 2",
+          "src": "https://dummyimage.com/600x404"
         }],
         "oldprice": 19.99,
         "newprice": 10.99

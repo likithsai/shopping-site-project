@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from "react-redux";
 import { appConstants } from "../enum/constants";
+import Cards from '../component/Cards';
 
 const Shop = (props) => {
     const [items, setItems] = useState([]);
@@ -14,22 +15,17 @@ const Shop = (props) => {
     }
 
     return (
-        <div>
-            <ul>
-                {
-                    items && items.length > 0 ? (
-                            items.map(item => (
-                                <li key={item.id}>
-                                    <p>{JSON.stringify(item)}</p>
-                                    {item.name} - ${item.newprice}
-                                    <button onClick={() => addToCart(item)}>Add to Cart</button>
-                                </li>
-                            ))
-                    ) : (<p>No items</p>)
-                }
-            </ul>
-        </div>
-
+        <>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mx-auto'>
+            {
+                items && items.length > 0 ? (
+                    items.map((item, index) => (
+                        <Cards key={index} title={item.name} images={item.images} desc={item.description} oldprice={item.oldprice} newprice={item.newprice} onClick={() => addToCart(item)} />
+                    ))
+                ) : (<p>No items</p>)
+            }
+            </div>
+        </>
     );
 }
 
