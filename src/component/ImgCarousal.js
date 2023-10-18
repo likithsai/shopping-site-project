@@ -15,7 +15,7 @@ const Carousel = ({ images }) => {
     );
   };
 
-//   handle scroll for mobile
+  //   handle scroll for mobile
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
   };
@@ -39,7 +39,7 @@ const Carousel = ({ images }) => {
 
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-full">
         <div
             className="relative w-full h-48 overflow-hidden"
             role="region"
@@ -50,11 +50,7 @@ const Carousel = ({ images }) => {
                 images.map((image, index) => (
                     <div
                         key={index}
-                        className={
-                            `w-full h-full absolute transform ${
-                                index === activeIndex ? '' : 'hidden'
-                            } ease-in-out`
-                        }
+                        className={ `w-full h-full absolute transform ${ index === activeIndex ? '' : 'hidden' } ease-in-out` }
                     >
                         <img
                             src={image.src}
@@ -69,13 +65,13 @@ const Carousel = ({ images }) => {
             <div className='hidden md:block'>
                 <button
                 onClick={prevSlide}
-                className="absolute top-1/2 left-2 transform -translate-y-1/2 text-white p-2 rounded-full hover:bg-gray-400 transition duration-200"
+                className="absolute top-1/2 left-2 transform -translate-y-1/2 text-black p-2 rounded-full hover:bg-gray-400 transition duration-200"
                 aria-label="Previous Slide">
                     <FaChevronLeft />
                 </button>
                 <button
                 onClick={nextSlide}
-                className="absolute top-1/2 right-2 transform -translate-y-1/2  text-white p-2 rounded-full hover:bg-gray-400 transition duration-200"
+                className="absolute top-1/2 right-2 transform -translate-y-1/2  text-black p-2 rounded-full hover:bg-gray-400 transition duration-200"
                 aria-label="Next Slide">
                     <FaChevronRight />
                 </button>
@@ -87,9 +83,7 @@ const Carousel = ({ images }) => {
                         <div
                             key={index}
                             className={
-                                `w-1.5 h-1.5 mx-0.5 rounded-full ${
-                                index === activeIndex ? 'bg-blue-500' : 'bg-gray-400'
-                                }`
+                                `w-1.5 h-1.5 mx-0.5 rounded-full ${ index === activeIndex ? 'bg-blue-500' : 'bg-gray-400' }`
                             }
                         />
                     ))
