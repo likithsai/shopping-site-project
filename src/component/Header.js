@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from 'react-router-dom';
 import { connect } from "react-redux";
-import { BsList, BsCartDash, BsPersonCircle, BsGrid1X2, BsShop, BsPerson } from "react-icons/bs";
+import { BsList, BsCartDash, BsGrid1X2, BsShop, BsPerson } from "react-icons/bs";
 import { FaShoppingBag } from "react-icons/fa";
 
 const Header = (props) => {
@@ -29,9 +29,6 @@ const Header = (props) => {
                                 </button>
                                 <span>{ props.cart.length }</span>
                             </div>
-                        </NavLink>
-                        <NavLink to="/login" className="hidden md:inline-flex items-center p-2 ml-1 text-sm rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
-                            <BsPersonCircle className="w-6 h-6" />
                         </NavLink>
                     </div>
                     <div className={`${
