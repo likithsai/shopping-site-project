@@ -67,7 +67,7 @@ const ProductDetail = (props) => {
                         </div>
                         <div className="mt-8">
                             <h2 className="text-lg font-semibold mb-2 font-bold">Product Description</h2>
-                            <p className="text-gray-800"> { itm.descriptiondetail } </p>
+                            <div className="text-gray-800" dangerouslySetInnerHTML={{ __html: itm.descriptiondetail }} />
                         </div>
                     </div>
                 ))

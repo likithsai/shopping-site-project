@@ -25,7 +25,7 @@ const Shop = (props) => {
                 // Render loading skeleton while loading is true
                 Array.from({ length: 4 }, (_, index) => (
                     <div key={index} className="animate-pulse bg-gray-200 rounded-md">
-                        <div className="w-full h-32 bg-gray-300 mb-2"></div> {/* Loading image skeleton */}
+                        <div className="w-full h-32 bg-gray-300 mb-2 rounded-md"></div> {/* Loading image skeleton */}
                         <div className="p-4 flex flex-col gap-2">
                             <div className="h-4 w-4/5 bg-gray-300 rounded-md mb-2"></div> {/* Loading title skeleton */}
                             <div className="h-4 w-1/2 bg-gray-300 rounded-full mb-2"></div> {/* Loading description skeleton */}

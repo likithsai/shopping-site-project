@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from 'react-router-dom';
 import { connect } from "react-redux";
 import { BsList, BsCartDash, BsPersonCircle, BsGrid1X2, BsShop, BsPerson } from "react-icons/bs";
+import { FaShoppingBag } from "react-icons/fa";
 
 const Header = (props) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,7 +16,8 @@ const Header = (props) => {
                             <span className="sr-only">Open main menu</span>
                             <BsList className="w-6 h-6" />
                         </button>
-                        <NavLink to="/">
+                        <NavLink to="/" className="flex items-center">
+                            <FaShoppingBag className="text-xl mr-2"/>
                             <span className="self-center text-xl font-semibold whitespace-nowrap font-bold">{ props.title }</span>
                         </NavLink>
                     </div>
