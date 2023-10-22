@@ -14,3 +14,8 @@ export const setData = (products) => ({
   type: appConstants.SET_DATA,
   payload: products,
 });
+
+export const setLoading = (status) => ({
+  type: appConstants.SET_LOADING,
+  payload: status
+})

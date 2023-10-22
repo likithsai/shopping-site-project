@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
-const Carousel = ({ images }) => {
+const ImgCarousel = ({ images }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const touchStartX = useRef(null);
 
@@ -94,4 +94,4 @@ const Carousel = ({ images }) => {
   );
 };
 
-export default Carousel;
+export default ImgCarousel;

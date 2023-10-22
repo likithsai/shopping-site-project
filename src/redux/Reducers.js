@@ -2,6 +2,7 @@ import { appConstants } from "../enum/constants";
 
 const initialState = {
     title: null,
+    loading: false,
     items: [],
     cart: [],
 };
@@ -24,6 +25,11 @@ const rootReducer = (state = initialState, action) => {
         items: action.payload,
         title: action.payload.title
       };
+    case appConstants.SET_LOADING:
+      return {
+        ...state,
+        loading: action.payload
+      }
     default:
       return state;
   }

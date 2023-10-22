@@ -8,9 +8,9 @@ const Cart = (props) => {
 
     useEffect(() => {
         setTimeout(() => {
-            setCartItems(props.cart);
+            setCartItems(props.cartItem);
         }, 0);
-    }, [props.cart]);
+    }, [props.cartItem]);
 
     const removeFromCart = (itemId) => {
         props.removeFromCart(itemId);
@@ -18,12 +18,12 @@ const Cart = (props) => {
 
     return (
         <div>
-            <div class="container mx-auto">
-                <div className='flex items-center justify-between py-4 sticky top-0'>
+            <div class="container mx-auto flex flex-col gap-2">
+                <div className='flex items-center justify-between sticky top-0'>
                     <h1 class="text-2xl font-semibold mb-4">Your Shopping Cart</h1>
                     <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Checkout</button>
                 </div>
-                <div className='flex flex-col gap-4'>
+                <div className='flex flex-col gap-2'>
                     {
                         cartItems && cartItems.length > 0 ? (
                             cartItems.map((itm, index) => (
@@ -56,25 +56,13 @@ const Cart = (props) => {
                     }
                 </div>
             </div>
-
-        {/* {
-            props.cart && props.cart.length > 0 ? (
-                props.cart.map(cartItem => (
-                    <li key={cartItem.id}>
-                        <p>{ JSON.stringify(cartItem)}</p>
-                        {cartItem.name} - ${cartItem.newprice}
-                        <button onClick={() => removeFromCart(cartItem.id)}>Remove from Cart</button>
-                    </li>
-                ))
-            ) : (<p>No Cart Items</p>)
-        } */}
         </div>
     );
 }
 
 function mapStateToProps(state) {
     return {
-        cart: state.cart
+        cartItem: state.cart
     }
 }
 

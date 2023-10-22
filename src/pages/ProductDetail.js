@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import { connect } from "react-redux";
-import ImgCarousal from "../component/ImgCarousal"; // Import the Carousel component
+import ImgCarousal from "../component/ImgCarousal";
 import { appConstants } from "../enum/constants";
 
 const ProductDetail = (props) => {
     const { id } = useParams();
     const [item, setItem] = useState([]);
-    const [loading, setLoading] = useState(true); // Add loading state
-
+    const [loading, setLoading] = useState(true);
+    
     useEffect(() => {
         setTimeout(() => {
-            setItem(props.items);
-            setLoading(false); // Set loading to false when data is loaded
+            setItem(props.items || []);
+            setLoading(props.loading);
         }, 1000);
-    }, [props.items]);
+    }, [props.items, props.loading]);
 
     return (
         <>
@@ -47,25 +47,23 @@ const ProductDetail = (props) => {
                 </div>
             ) : (
                 item.filter(itm => itm.id === id).map(itm => (
-                    <div className="container mx-auto p-4 gap-2" key={itm.id}>
-                        <div className="sticky top-0">
-                            <section role="main" className="grid md:grid-cols-2 gap-4 items-start">
-                                <ImgCarousal images={itm.images} />
-                                <div className="md:ml-8 mt-4 md:mt-0">
-                                    <h1 className="text-3xl font-semibold mb-2">{itm.name}</h1>
-                                    <span className="bg-blue-500 text-white py-1 px-2 rounded-full text-sm mt-2 inline-block">Category Name</span>
-                                    <div className="flex items-center mt-4">
-                                        <span className="text-2xl font-semibold text-green-600">{itm.oldprice}</span>
-                                        <span className="text-lg text-gray-600 ml-2 line-through">{itm.oldprice}</span>
-                                    </div>
-                                    <div className="mt-6 space-x-4">
-                                        <button className="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out">Buy Now</button>
-                                        <button className="bg-green-500 text-white px-6 py-3 rounded-md hover:bg-green-600 transition duration-300 ease-in-out" onClick={() => props.addToCart(item)}>Add to Cart</button>
-                                    </div>
+                    <div className="container mx-auto p-4 gap-8 flex flex-col" key={itm.id}>
+                        <section role="main" className="grid md:grid-cols-2 gap-4 items-start">
+                            <ImgCarousal images={itm.images} />
+                            <div className="md:ml-8 mt-4 md:mt-0">
+                                <h1 className="text-3xl font-semibold mb-2 font-bold">{itm.name}</h1>
+                                <p>{itm.description}</p>
+                                <div className="flex items-center mt-4">
+                                    <span className="text-2xl font-semibold text-green-600">{itm.oldprice}</span>
+                                    <span className="text-lg text-gray-600 ml-2 line-through">{itm.oldprice}</span>
                                 </div>
-                            </section>
-                        </div>
-                        <div className="mt-8">
+                                <div className="mt-6 space-x-4">
+                                    <button className="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out">Buy Now</button>
+                                    <button className="bg-green-500 text-white px-6 py-3 rounded-md hover:bg-green-600 transition duration-300 ease-in-out" onClick={() => props.addToCart(item)}>Add to Cart</button>
+                                </div>
+                            </div>
+                        </section>
+                        <div>
                             <h2 className="text-lg font-semibold mb-2 font-bold">Product Description</h2>
                             <div className="text-gray-800" dangerouslySetInnerHTML={{ __html: itm.descriptiondetail }} />
                         </div>
@@ -79,7 +77,8 @@ const ProductDetail = (props) => {
 
 function mapStateToProps(state) {
     return {
-        items: state.items.products
+        items: state.items.products,
+        loading: state.items.loading
     }
 }
 

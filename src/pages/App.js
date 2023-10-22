@@ -5,20 +5,30 @@ import ProductDetail from "./ProductDetail";
 import { Provider } from 'react-redux';
 import store from '../redux/Store';
 import axios from "axios";
-import { setData } from '../redux/Actions';
+import { setData, setLoading } from '../redux/Actions';
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import Shop from "../pages/Shop";
 import Cart from "./Cart";
 import Login from "./Login";
 
-const JSON_DATA = "data/data.json";
+const JSON_DATA = "http://localhost:3000/data/data.json";
 
 const App = () => {
     useEffect(() => {
-        axios.get(JSON_DATA)
-            .then((res) => store.dispatch(setData(res.data)))
-            .catch(err => console.log(err))
+        const fetchData = async () => {
+            try {
+                await axios.get(JSON_DATA).then(response => {
+                    store.dispatch(setData(response.data));
+                    store.dispatch(setLoading(false));
+                });
+            } catch (err) {
+                console.log(err);
+            }
+        };
+
+        fetchData();
+
     }, []);
 
     return (
@@ -26,7 +36,7 @@ const App = () => {
             <BrowserRouter>
                 <div>
                     <Header></Header>
-                    <main className="flex-1 overflow-y-scroll gap-2 bg-gray-50">
+                    <main className="flex-1 overflow-y-scroll gap-2">
                         <div className='px-4 py-2.5'>
                             <div className="w-full mx-auto max-w-screen-xl">
                             <Routes>
