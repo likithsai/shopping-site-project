@@ -19,7 +19,7 @@ const App = () => {
         const fetchData = async () => {
             try {
                 await axios.get(JSON_DATA).then(response => {
-                    store.dispatch(setData(response.data));
+                    store.dispatch(setData(response.data || []));
                     store.dispatch(setLoading(false));
                 });
             } catch (err) {

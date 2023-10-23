@@ -27,7 +27,7 @@ const Header = (props) => {
             <span className="self-center text-xl font-semibold whitespace-nowrap font-bold">{props.title}</span>
           </NavLink>
         </div>
-        <div className="flex items-center lg:order-2 gap-1">
+        <div className="flex items-center lg:order-2 gap-2">
           <NavLink exact to="/cart" className="aria-[current=page]:text-blue-700" onClick={() => setMobileMenuOpen(false)}>
             <div className="flex items-center gap-1 py-2 px-2">
               <button className="inline-flex items-center ml-1 text-sm rounded-lg hover-bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">

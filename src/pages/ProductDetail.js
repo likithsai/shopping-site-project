@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { connect } from "react-redux";
 import ImgCarousal from "../component/ImgCarousal";
 import { appConstants } from "../enum/constants";
+import SnapCarousal from "../component/SnapCarousal";
+import Cards from "../component/Cards";
 
 const ProductDetail = (props) => {
     const { id } = useParams();
@@ -66,6 +68,19 @@ const ProductDetail = (props) => {
                         <div>
                             <h2 className="text-lg font-semibold mb-2 font-bold">Product Description</h2>
                             <div className="text-gray-800" dangerouslySetInnerHTML={{ __html: itm.descriptiondetail }} />
+                        </div>
+                        <div>
+                            <SnapCarousal>
+                            {
+                                item && item.length > 0 ? (
+                                    item.map((item, index) => (
+                                        <Cards key={index} id={item.id} title={item.name} images={item.images} desc={item.description} oldprice={item.oldprice} newprice={item.newprice} />
+                                    ))
+                                ) : (
+                                    <p>No items</p>
+                                )
+                            }
+                            </SnapCarousal>
                         </div>
                     </div>
                 ))

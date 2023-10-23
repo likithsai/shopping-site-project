@@ -8,7 +8,7 @@ const Cart = (props) => {
 
     useEffect(() => {
         setTimeout(() => {
-            setCartItems(props.cartItem);
+            setCartItems(props.cartItem || []);
         }, 0);
     }, [props.cartItem]);
 
