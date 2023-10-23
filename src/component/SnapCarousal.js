@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom'; // Import NavLink from your router library
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { BsArrowRightCircle } from "react-icons/bs";
 
 const SnapCarousel = ({ title, children }) => {
