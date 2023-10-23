@@ -70,7 +70,7 @@ const ProductDetail = (props) => {
                             <div className="text-gray-800" dangerouslySetInnerHTML={{ __html: itm.descriptiondetail }} />
                         </div>
                         <div>
-                            <SnapCarousal>
+                            <SnapCarousal title={"Related Products"} maxVisibleItems={5}>
                             {
                                 item && item.length > 0 ? (
                                     item.map((item, index) => (
