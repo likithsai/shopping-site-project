@@ -92,7 +92,7 @@ const ProductDetail = (props) => {
                     </button>
                     <button
                       className="bg-green-500 text-white px-6 py-3 rounded-md hover:bg-green-600 transition duration-300 ease-in-out"
-                      onClick={() => props.addToCart(item)}
+                      onClick={() => props.addToCart(itm)}
                     >
                       Add to Cart
                     </button>
