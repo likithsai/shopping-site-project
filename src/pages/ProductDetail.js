@@ -18,6 +18,9 @@ const ProductDetail = (props) => {
     }, 1000);
   }, [props.items, props.loading]);
 
+  // Check if the item is in the cart
+  const isItemInCart = props.cartItem.some((cartItem) => cartItem.id === id);
+
   return (
     <>
       {loading ? ( // Display loading skeleton when loading is true
@@ -91,8 +94,13 @@ const ProductDetail = (props) => {
                       Buy Now
                     </button>
                     <button
-                      className="bg-green-500 text-white px-6 py-3 rounded-md hover:bg-green-600 transition duration-300 ease-in-out"
+                      className={`${
+                        isItemInCart
+                          ? "opacity-50 cursor-not-allowed"
+                          : "opacity-100"
+                      } bg-green-500 text-white px-6 py-3 rounded-md hover:bg-green-600 transition duration-300 ease-in-out`}
                       onClick={() => props.addToCart(itm)}
+                      disabled={isItemInCart}
                     >
                       Add to Cart
                     </button>
@@ -138,6 +146,7 @@ function mapStateToProps(state) {
   return {
     items: state.items.products,
     loading: state.items.loading,
+    cartItem: state.cart,
   };
 }
 

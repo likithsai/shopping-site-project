@@ -22,7 +22,7 @@ const Shop = (props) => {
             {
                 items && items.length > 0 ? (
                     items.map((item, index) => (
-                        <Cards key={index} id={item.id} title={item.name} images={item.images} desc={item.description} oldprice={item.oldprice} newprice={item.newprice} onClick={() => addToCart(item)} />
+                        <Cards key={index} id={item.id} title={item.name} images={item.images} desc={item.description} oldprice={item.oldprice} newprice={item.newprice} onAddToCartClick={() => addToCart(item)} />
                     ))
                 ) : (
                     <p>No items</p>

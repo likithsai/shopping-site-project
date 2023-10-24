@@ -14,21 +14,27 @@ const Cart = (props) => {
     props.removeFromCart(itemId);
   };
 
+  // Calculate the total price
+  const total = cartItems.reduce((acc, item) => acc + item.newprice, 0);
+
   return (
     <div>
-      <div class="container mx-auto flex flex-col gap-2">
-        <div className="flex items-center justify-between sticky top-0">
-          <h1 class="text-2xl font-semibold mb-4">Your Shopping Cart</h1>
-          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-            Checkout
-          </button>
+      <div className="container mx-auto flex flex-col gap-2">
+        <div className="bg-gray-200 p-8 text-center flex flex-col items-center justify-between shadow rounded-lg gap-4">
+            <h2 className="text-2xl">Your total is</h2>
+            <h1 className="text-3xl font-bold">${total.toFixed(2)}</h1>
+            <button className="bg-blue-500 text-white px-4 py-2 rounded hover-bg-blue-600">
+                Proceed to Checkout
+            </button>
         </div>
         <div className="flex flex-col gap-2">
           {cartItems && cartItems.length > 0 ? (
             cartItems.map((itm, index) => (
               <div
                 key={index}
-                className="border-b border-gray-200 rounded py-4 flex w-full items-center justify-between"
+                className={`rounded py-4 flex w-full items-center justify-between ${
+                  index === cartItems.length - 1 ? "" : "border-b border-gray-200"
+                }`}
               >
                 <div className="flex items-center">
                   <div className="w-16 h-16">
@@ -52,7 +58,7 @@ const Cart = (props) => {
                   </div>
                   <div>
                     <button
-                      className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                      className="bg-blue-500 text-white px-4 py-2 rounded hover-bg-blue-600"
                       onClick={() => removeFromCart(itm.id)}
                     >
                       <BsTrash className="fas fa-trash" />
