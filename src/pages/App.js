@@ -12,7 +12,7 @@ import Shop from "../pages/Shop";
 import Cart from "./Cart";
 import Login from "./Login";
 
-const JSON_DATA = "http://localhost:3000/data/data.json";
+const JSON_DATA = "./data/data.json";
 
 const App = () => {
     useEffect(() => {

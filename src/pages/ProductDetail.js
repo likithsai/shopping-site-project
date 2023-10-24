@@ -107,7 +107,7 @@ const ProductDetail = (props) => {
                   </div>
                 </div>
               </section>
-              <div>
+              <section>
                 <h2 className="text-lg font-semibold mb-2 font-bold">
                   Product Description
                 </h2>
@@ -115,8 +115,8 @@ const ProductDetail = (props) => {
                   className="text-gray-800"
                   dangerouslySetInnerHTML={{ __html: itm.descriptiondetail }}
                 />
-              </div>
-              <div>
+              </section>
+              <section>
                 <SnapCarousal title="Featured Items" showMoreLink="/more-items">
                   {item && item.length > 0 ? (
                     item.map((item, index) => (
@@ -134,7 +134,7 @@ const ProductDetail = (props) => {
                     <p>No items</p>
                   )}
                 </SnapCarousal>
-              </div>
+              </section>
             </div>
           ))
       )}
